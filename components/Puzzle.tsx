@@ -2,11 +2,11 @@ import { useCallback, useEffect, useState } from 'react'
 import { ethos } from 'ethos-connect'
 import { SuccessMessage } from '.';
 
-const Mint = ({ version, reset }: { version: number, reset: () => void }) => {
+const Puzzle = ({ version, reset }: { version: number, reset: () => void }) => {
     const { wallet } = ethos.useWallet();
     const [nftObjectId, setNftObjectId] = useState(null);
 
-    const mint = useCallback(async () => {
+    const puzzle = useCallback(async () => {
         if (!wallet) return;
     
         try {
@@ -18,9 +18,9 @@ const Mint = ({ version, reset }: { version: number, reset: () => void }) => {
               function: "mint",
               typeArguments: [],
               arguments: [
-                "Skull Puzzle",
-                "Zombie Skull from Puzzle Mint",
-                "img/",
+                "Ethos Example NFT",
+                "A sample NFT from Ethos Wallet.",
+                "https://ethoswallet.xyz/assets/images/ethos-email-logo.png",
               ],
               gasBudget: 10000,
             },
@@ -56,12 +56,12 @@ const Mint = ({ version, reset }: { version: number, reset: () => void }) => {
             )}
             <button
                 className="mx-auto px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-                onClick={mint}
+                onClick={puzzle}
             >
-                Mint an NFT
+                Puzzle Here
             </button>
         </div>
     )
 }
 
-export default Mint;
+export default Puzzle;

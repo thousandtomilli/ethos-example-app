@@ -2,8 +2,11 @@ import type { NextPage } from "next";
 import { SignInButton, ethos } from "ethos-connect";
 import { useCallback, useEffect, useState } from "react";
 import { Disconnect, Fund, Mint, WalletActions } from "../components";
-
+import useScript from '../hooks/useScript';
+ 
 const Home: NextPage = () => {
+  useScript('../lib/headbreaker.js');
+  useScript('../lib/script.js');    
   const { status, wallet } = ethos.useWallet();
 
   const [version, setVersion] = useState<number>(0);
@@ -27,19 +30,19 @@ const Home: NextPage = () => {
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Connected to wallet
+                Solve the Puzzle to Mint
               </h2>
-              <code>{wallet.address}</code>
-              <div className="place-content-center text-base font-medium text-ethos-primary space-x-1">
-                <div>
-                  Wallet balance: <code>{wallet.contents?.suiBalance}</code>{" "}
-                  Mist
-                </div>
-                <div className="text-xs text-gray-500">
-                  (1 sui is 10^9 Mist)
-                </div>
-              </div>
+              <h3 className="text-2xl font-extrabold tracking-tight sm:text-2xl">
+                Must Fit in Square!
+              </h3>
             </div>
+
+            <div className="flex flex-col gap-2">
+              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                
+              </h2>
+            </div>
+
             <div className="flex flex-col gap-4">
               First, fund this wallet from the Sui faucet:
               <Fund
@@ -47,6 +50,8 @@ const Home: NextPage = () => {
                 reset={reset}
               />
               then
+              <div id="autogen-canvas" className="flex flex-col gap-4"></div>
+  
               <Mint 
                 version={version}
                 reset={reset}
