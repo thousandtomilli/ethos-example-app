@@ -3,7 +3,8 @@ var headbreaker=function(t){var e={};function i(r){if(e[r])return e[r].exports;v
 
 docReady(function() { 
 
-  var audio = new Audio('../clickbones.wav');
+  var bonesAudio = new Audio('../clickbones.wav');
+  var fanfareAudio = new Audio('../trumpet_fanfare.wav');
   let berni = new Image();
   berni.src = 'https://moveecosystem.com/wp-content/uploads/2022/11/zombie-skull.png';
   berni.onload = () => {
@@ -30,6 +31,7 @@ docReady(function() {
     sound.onValid(() => {
       console.log("puzzle-solved")
       setTimeout(() => {
+        fanfareAudio.play();
         document.getElementById('overlay-image').setAttribute("class", "active");
         document.getElementById('mint-button').disabled = false;
       }, 50);
@@ -38,7 +40,8 @@ docReady(function() {
     sound.onConnect((_piece, figure, _target, targetFigure) => {
       figure.shape.stroke('yellow');
       targetFigure.shape.stroke('orange');
-      audio.play();
+      bonesAudio.currentTime = 0;
+      bonesAudio.play();
       sound.redraw();
       setTimeout(() => {
         figure.shape.stroke('black');
@@ -48,7 +51,8 @@ docReady(function() {
     });
   
     sound.onDisconnect((it) => {
-      audio.play();
+      bonesAudio.currentTime = 0;
+      bonesAudio.play();
     });
   }
 });
