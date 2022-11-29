@@ -8,7 +8,7 @@ docReady(function() {
       console.log("Script running");
       const autogen = new headbreaker.Canvas('autogen-canvas', {
         width: 512, height: 512,
-        pieceSize: 64, proximity: 20,
+        pieceSize: 100, proximity: 20,
         borderFill: 10, strokeWidth: 1.5,
         lineSoftness: 0, image: xul,
       });

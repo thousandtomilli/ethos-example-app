@@ -1,26 +1,46 @@
 docReady(function() { 
-  let xul = new Image();
-  xul.src = 'https://moveecosystem.com/wp-content/uploads/2022/11/zombie-skull.png';
-  xul.onload = () => {
-    console.log("Script running");
-    const autogen = new headbreaker.Canvas('autogen-canvas', {
+
+  var audio = new Audio('../clickbones.wav');
+  let berni = new Image();
+  berni.src = 'https://moveecosystem.com/wp-content/uploads/2022/11/zombie-skull.png';
+  berni.onload = () => {
+    const sound = new headbreaker.Canvas('sound-canvas', {
       width: 512, height: 512,
-      pieceSize: 64, proximity: 20,
+      pieceSize: 100, proximity: 20,
       borderFill: 10, strokeWidth: 1.5,
-      lineSoftness: 0, image: xul,
+      lineSoftness: 0.18, image: berni,
+      strokeColor: 'black'
     });
 
-    autogen.adjustImagesToPuzzleHeight();
-    autogen.autogenerate({
-      horizontalPiecesCount: 4,
-      verticalPiecesCount: 4
+    sound.adjustImagesToPuzzleHeight();
+    sound.autogenerate({
+      horizontalPiecesCount: 8,
+      verticalPiecesCount: 8,
+      insertsGenerator: headbreaker.generators.random
     });
-    autogen.shuffle(0.8);
-    autogen.draw();
+    sound.draw();  
+
+    sound.onConnect((_piece, figure, _target, targetFigure) => {
+      figure.shape.stroke('yellow');
+      targetFigure.shape.stroke('yellow');
+      audio.play();
+      sound.redraw();
+      setTimeout(() => {
+        figure.shape.stroke('black');
+        targetFigure.shape.stroke('black');
+        sound.redraw();
+      }, 100);
+    });
+  
+    sound.onDisconnect((it) => {
+      audio.play();
+    });
+  
+    registerButtons('sound', sound);
   }
-  )};
+});
 
-  function docReady(fn) {
+function docReady(fn) {
     // see if DOM is already available
     if (document.readyState === "complete" || document.readyState === "interactive") {
         // call on next available tick
@@ -29,3 +49,4 @@ docReady(function() {
         document.addEventListener("DOMContentLoaded", fn);
     }
 }   
+

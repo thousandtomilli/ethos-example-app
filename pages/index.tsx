@@ -34,22 +34,18 @@ const Home: NextPage = () => {
               </h2>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                
-              </h2>
-            </div>
-
             <div className="flex flex-col gap-4">
-              First, fund this wallet from the Sui faucet:
+              Careful - don't lose any pieces!
+
+              <div id="autogen-canvas" className=""></div>
+  
               <Fund
                 version={version}
                 reset={reset}
               />
+
               then
 
-              <div id="autogen-canvas" className=""></div>
-  
               <Mint 
                 version={version}
                 reset={reset}
