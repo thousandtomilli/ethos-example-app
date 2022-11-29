@@ -2,11 +2,10 @@ import type { NextPage } from "next";
 import { SignInButton, ethos } from "ethos-connect";
 import { useCallback, useEffect, useState } from "react";
 import { Disconnect, Fund, Mint, WalletActions } from "../components";
-import useScript from '../hooks/useScript';
- 
+import Script from 'next/script';
+
 const Home: NextPage = () => {
-  useScript('../lib/headbreaker.js');
-  useScript('../lib/script.js');    
+
   const { status, wallet } = ethos.useWallet();
 
   const [version, setVersion] = useState<number>(0);
@@ -19,6 +18,7 @@ const Home: NextPage = () => {
 
   return (
     <div className="flex justify-between items-start">
+
       <div className="p-12 flex-1">Status: {status}</div>
 
       <div className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8 flex-6">
@@ -32,9 +32,6 @@ const Home: NextPage = () => {
               <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
                 Solve the Puzzle to Mint
               </h2>
-              <h3 className="text-2xl font-extrabold tracking-tight sm:text-2xl">
-                Must Fit in Square!
-              </h3>
             </div>
 
             <div className="flex flex-col gap-2">
@@ -50,7 +47,8 @@ const Home: NextPage = () => {
                 reset={reset}
               />
               then
-              <div id="autogen-canvas" className="flex flex-col gap-4"></div>
+
+              <div id="autogen-canvas" className=""></div>
   
               <Mint 
                 version={version}
@@ -71,6 +69,8 @@ const Home: NextPage = () => {
       <div className="p-12 flex-1 flex justify-end">
         <ethos.components.AddressWidget />
       </div>
+      <Script src="../headbreaker.js"/>
+      {/* <Script src="../script.js" type="text/javascript" /> */}
     </div>
   );
 };

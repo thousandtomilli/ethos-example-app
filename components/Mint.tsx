@@ -20,7 +20,7 @@ const Mint = ({ version, reset }: { version: number, reset: () => void }) => {
               arguments: [
                 "Skull Puzzle",
                 "Zombie Skull from Puzzle Mint",
-                "img/",
+                "https://moveecosystem.com/wp-content/uploads/2022/11/zombie-skull.png",
               ],
               gasBudget: 10000,
             },
@@ -55,7 +55,7 @@ const Mint = ({ version, reset }: { version: number, reset: () => void }) => {
                 </SuccessMessage>
             )}
             <button
-                className="mx-auto px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+                className="mx-auto px-5 py-3 border border-transparent text-base font-medium rounded-md bg-indigo-600 hover:bg-indigo-700"
                 onClick={mint}
             >
                 Mint an NFT
