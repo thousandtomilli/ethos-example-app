@@ -31,10 +31,43 @@ a {
   }
 }
 
-#autogen-canvas {
+#sound-canvas {
   border: solid white;
   background:gray;
   margin: 0;
   padding: 0;
   box-sizing: content-box;
+}
+
+#overlay-image {
+  position:absolute;
+  left:0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+  z-index: 100;
+}
+
+#overlay-image.active {
+  opacity: 1;
+}
+
+#canvas-container {
+  position:relative!important;
+}
+
+#main-container button {
+  background-color: #f3db08;
+  color:black;
+}
+#main-container button:disabled {
+  background-color: hsl(33, 80%, 24%);
+  color:black;
+}
+
+#main-container {
+  font-family: 'Arial Black', serif;
 }

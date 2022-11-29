@@ -55,10 +55,11 @@ const Mint = ({ version, reset }: { version: number, reset: () => void }) => {
                 </SuccessMessage>
             )}
             <button
+                id="mint-button"
                 className="mx-auto px-5 py-3 border border-transparent text-base font-medium rounded-md bg-indigo-600 hover:bg-indigo-700"
                 onClick={mint}
             >
-                Mint an NFT
+                Mint Skull
             </button>
         </div>
     )

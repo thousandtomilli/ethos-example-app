@@ -1,6 +1,5 @@
 import { EthosConnectProvider } from "ethos-connect";
 import ExampleIcon from "../icons/ExampleIcon";
-
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 

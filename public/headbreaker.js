@@ -2,26 +2,56 @@ var headbreaker=function(t){var e={};function i(r){if(e[r])return e[r].exports;v
 //# sourceMappingURL=headbreaker.js.map
 
 docReady(function() { 
-    let xul = new Image();
-    xul.src = 'https://moveecosystem.com/wp-content/uploads/2022/11/zombie-skull.png';
-    xul.onload = () => {
-      console.log("Script running");
-      const autogen = new headbreaker.Canvas('autogen-canvas', {
-        width: 512, height: 512,
-        pieceSize: 100, proximity: 20,
-        borderFill: 10, strokeWidth: 1.5,
-        lineSoftness: 0, image: xul,
-      });
+
+  var audio = new Audio('../clickbones.wav');
+  let berni = new Image();
+  berni.src = 'https://moveecosystem.com/wp-content/uploads/2022/11/zombie-skull.png';
+  berni.onload = () => {
+    document.getElementById('mint-button').disabled = true;
+    const sound = new headbreaker.Canvas('sound-canvas', {
+      width: 444, height: 444,
+      pieceSize: 89, proximity: 20,
+      borderFill: 10, strokeWidth: 1.5,
+      lineSoftness: 0.18, image: berni,
+      strokeColor: 'black',
+      fixed: true
+    });
+
+    sound.adjustImagesToPuzzleHeight();
+    sound.autogenerate({
+      horizontalPiecesCount: 4,
+      verticalPiecesCount: 4,
+      insertsGenerator: headbreaker.generators.random
+    });
+    sound.shuffle();
+    sound.draw();  
+
+    sound.attachSolvedValidator();
+    sound.onValid(() => {
+      console.log("puzzle-solved")
+      setTimeout(() => {
+        document.getElementById('overlay-image').setAttribute("class", "active");
+        document.getElementById('mint-button').disabled = false;
+      }, 50);
+    })
+
+    sound.onConnect((_piece, figure, _target, targetFigure) => {
+      figure.shape.stroke('yellow');
+      targetFigure.shape.stroke('orange');
+      audio.play();
+      sound.redraw();
+      setTimeout(() => {
+        figure.shape.stroke('black');
+        targetFigure.shape.stroke('black');
+        sound.redraw();
+      }, 200);
+    });
   
-      autogen.adjustImagesToPuzzleHeight();
-      autogen.autogenerate({
-        horizontalPiecesCount: 4,
-        verticalPiecesCount: 4
-      });
-      autogen.shuffle(0.8);
-      autogen.draw();
-    }
-  });
+    sound.onDisconnect((it) => {
+      audio.play();
+    });
+  }
+});
 
 function docReady(fn) {
     // see if DOM is already available

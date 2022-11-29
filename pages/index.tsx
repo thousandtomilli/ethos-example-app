@@ -3,6 +3,7 @@ import { SignInButton, ethos } from "ethos-connect";
 import { useCallback, useEffect, useState } from "react";
 import { Disconnect, Fund, Mint, WalletActions } from "../components";
 import Script from 'next/script';
+import Image from 'next/image';
 
 const Home: NextPage = () => {
 
@@ -21,7 +22,7 @@ const Home: NextPage = () => {
 
       <div className="p-12 flex-1">Status: {status}</div>
 
-      <div className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8 flex-6">
+      <div id="main-container" className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8 flex-6">
         {!wallet ? (
           <SignInButton className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
             Connect
@@ -33,30 +34,33 @@ const Home: NextPage = () => {
                 Solve the Puzzle to Mint
               </h2>
             </div>
-
             <div className="flex flex-col gap-4">
-              Careful - don't lose any pieces!
-
-              <div id="autogen-canvas" className=""></div>
+              <div id="canvas-container">
+                <div id="sound-canvas">
+                </div>
+                <div id="overlay-image">
+                  <Image 
+                    id="validated-canvas-overlay" 
+                    src="/zombie_skull.png"
+                    width={444}
+                    height={444}
+                    alt="skull puzzle"
+                  /> 
+                </div>
+              </div>
   
+              <Mint
+                version={version}
+                reset={reset}
+              />
+              or access Sui faucet:
               <Fund
-                version={version}
-                reset={reset}
-              />
-
-              then
-
-              <Mint 
-                version={version}
-                reset={reset}
-              />
-              or
-              <WalletActions 
                 version={version}
                 reset={reset}
               />
               or
               <Disconnect reset={reset} />
+              <Script src="../headbreaker.js"/>
             </div>
           </div>
         )}
@@ -65,8 +69,6 @@ const Home: NextPage = () => {
       <div className="p-12 flex-1 flex justify-end">
         <ethos.components.AddressWidget />
       </div>
-      <Script src="../headbreaker.js"/>
-      {/* <Script src="../script.js" type="text/javascript" /> */}
     </div>
   );
 };
