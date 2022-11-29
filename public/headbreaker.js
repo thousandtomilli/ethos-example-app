@@ -10,7 +10,7 @@ docReady(function() {
     document.getElementById('mint-button').disabled = true;
     const sound = new headbreaker.Canvas('sound-canvas', {
       width: 444, height: 444,
-      pieceSize: 89, proximity: 20,
+      pieceSize: 111, proximity: 20,
       borderFill: 10, strokeWidth: 1.5,
       lineSoftness: 0.18, image: berni,
       strokeColor: 'black',
@@ -19,8 +19,8 @@ docReady(function() {
 
     sound.adjustImagesToPuzzleHeight();
     sound.autogenerate({
-      horizontalPiecesCount: 4,
-      verticalPiecesCount: 4,
+      horizontalPiecesCount: 3,
+      verticalPiecesCount: 3,
       insertsGenerator: headbreaker.generators.random
     });
     sound.shuffle();
