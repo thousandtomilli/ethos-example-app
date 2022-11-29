@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       ethosConfiguration={ethosConfiguration}
       dappName="EthosConnect Example App"
       dappIcon={<ExampleIcon />}
-      connectMessage="Select or Install Sui Wallet Chome Extension for Best Experience. Refresh after sign-in if no puzzle appears!"
+      connectMessage="Select or Install Sui Wallet Chome Extension (set to Devnet) for Best Experience. Refresh after sign-in if no puzzle appears!"
     >
       <Component {...pageProps} />
     </EthosConnectProvider>
