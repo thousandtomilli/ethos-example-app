@@ -2,12 +2,13 @@ var headbreaker=function(t){var e={};function i(r){if(e[r])return e[r].exports;v
 //# sourceMappingURL=headbreaker.js.map
 
 docReady(function() { 
-  var beginSoundGorilla = new Audio('../begin_sound_gorilla.wav');
+  var beginSound = new Audio('../beginsound.wav');
   var ahaGorilla = new Audio('../aha_gorilla.wav');
   var endSoundGorilla = new Audio('../endsound.wav');
   let berni = new Image();
   berni.src = '/ape.jpg';
   berni.onload = () => {
+    beginSound.play();
     document.getElementById('mint-button').disabled = true;
     const sound = new headbreaker.Canvas('sound-canvas', {
       width: 444, height: 444,
@@ -17,7 +18,6 @@ docReady(function() {
       strokeColor: 'black',
       fixed: true
     });
-    beginSoundGorilla.play();
     sound.adjustImagesToPuzzleHeight();
     sound.autogenerate({
       horizontalPiecesCount: 3,
