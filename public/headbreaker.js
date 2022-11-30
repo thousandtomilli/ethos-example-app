@@ -4,7 +4,7 @@ var headbreaker=function(t){var e={};function i(r){if(e[r])return e[r].exports;v
 docReady(function() { 
   var beginSoundGorilla = new Audio('../begin_sound_gorilla.wav');
   var ahaGorilla = new Audio('../aha_gorilla.wav');
-  var endSoundGorilla = new Audio('../end_sound_gorilla.mp3');
+  var endSoundGorilla = new Audio('../endsound.wav');
   let berni = new Image();
   berni.src = '/ape.jpg';
   berni.onload = () => {
