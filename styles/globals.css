@@ -9,7 +9,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color:white;
-  background-color: black;  
+  background-color:black;   
 }
 
 a {
@@ -27,13 +27,13 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background-color: black;
   }
 }
 
 #sound-canvas {
   border: solid white;
-  background:gray;
+  background:beige;
   margin: 0;
   padding: 0;
   box-sizing: content-box;
@@ -48,7 +48,7 @@ a {
   opacity: 0;
   pointer-events: none;
   transition: opacity 1s ease-in-out;
-  z-index: 100;
+  z-index: 2;
 }
 
 #overlay-image.active {
@@ -57,17 +57,19 @@ a {
 
 #canvas-container {
   position:relative!important;
+  width: 444px;
+  height: 444px;
 }
 
 #main-container button {
-  background-color: #f3db08;
+  background-color: #ffa19f;
   color:black;
 }
 #main-container button:disabled {
-  background-color: hsl(33, 80%, 24%);
+  background-color: #422525;
   color:black;
 }
 
-#main-container {
-  font-family: 'Arial Black', serif;
+#main-container * {
+  font-family: "Dejavu Sans", Helvetica, sans-serif!important;
 }

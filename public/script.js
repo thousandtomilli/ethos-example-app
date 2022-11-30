@@ -2,7 +2,7 @@ docReady(function() {
 
   var audio = new Audio('../clickbones.wav');
   let berni = new Image();
-  berni.src = 'https://moveecosystem.com/wp-content/uploads/2022/11/zombie-skull.png';
+  berni.src = '/ape.jpg';
   berni.onload = () => {
     const sound = new headbreaker.Canvas('sound-canvas', {
       width: 512, height: 512,

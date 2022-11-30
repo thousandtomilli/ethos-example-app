@@ -2,11 +2,11 @@ var headbreaker=function(t){var e={};function i(r){if(e[r])return e[r].exports;v
 //# sourceMappingURL=headbreaker.js.map
 
 docReady(function() { 
-
-  var bonesAudio = new Audio('../clickbones.wav');
-  var fanfareAudio = new Audio('../trumpet_fanfare.mp3');
+  var beginSoundGorilla = new Audio('../begin_sound_gorilla.wav');
+  var ahaGorilla = new Audio('../aha_gorilla.wav');
+  var endSoundGorilla = new Audio('../end_sound_gorilla.mp3');
   let berni = new Image();
-  berni.src = 'https://moveecosystem.com/wp-content/uploads/2022/11/zombie-skull.png';
+  berni.src = '/ape.jpg';
   berni.onload = () => {
     document.getElementById('mint-button').disabled = true;
     const sound = new headbreaker.Canvas('sound-canvas', {
@@ -17,7 +17,7 @@ docReady(function() {
       strokeColor: 'black',
       fixed: true
     });
-    bonesAudio.play();
+    beginSoundGorilla.play();
     sound.adjustImagesToPuzzleHeight();
     sound.autogenerate({
       horizontalPiecesCount: 3,
@@ -31,17 +31,20 @@ docReady(function() {
     sound.onValid(() => {
       console.log("puzzle-solved")
       setTimeout(() => {
-        fanfareAudio.play();
+        endSoundGorilla.play();
         document.getElementById('overlay-image').setAttribute("class", "active");
         document.getElementById('mint-button').disabled = false;
+        document.getElementById('headline').innerHTML = "Congrats! Mint Your Ape!";
+        document.getElementById('sound-canvas').style.border = "none";
+        document.getElementById('sound-canvas').style.background = "black";
       }, 50);
     })
 
     sound.onConnect((_piece, figure, _target, targetFigure) => {
       figure.shape.stroke('yellow');
       targetFigure.shape.stroke('orange');
-      bonesAudio.currentTime = 0;
-      bonesAudio.play();
+      ahaGorilla.currentTime = 0;
+      ahaGorilla.play();
       sound.redraw();
       setTimeout(() => {
         figure.shape.stroke('black');
@@ -51,8 +54,7 @@ docReady(function() {
     });
   
     sound.onDisconnect((it) => {
-      bonesAudio.currentTime = 0;
-      bonesAudio.play();
+      
     });
   }
 });

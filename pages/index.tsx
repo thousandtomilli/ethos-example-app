@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const Home: NextPage = () => {
 
-  const { status, wallet } = ethos.useWallet();
+  const { wallet } = ethos.useWallet();
 
   const [version, setVersion] = useState<number>(0);
   
@@ -20,13 +20,13 @@ const Home: NextPage = () => {
   return (
     <div className="flex justify-between items-start">
 
-      <div className="p-12 flex-1">Status: {status}</div>
+    <div className="p-12 flex-1"></div>
 
       <div id="main-container" className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8 flex-6">
         {wallet ? (
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <h2 id="headline" className="text-3xl font-extrabold tracking-tight sm:text-4xl">
                 Solve the Puzzle to Mint
               </h2>
             </div>
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
                 <div id="overlay-image">
                   <Image 
                     id="validated-canvas-overlay" 
-                    src="/zombie_skull.png"
+                    src="/ape.jpg"
                     width={444}
                     height={444}
                     alt="skull puzzle"
