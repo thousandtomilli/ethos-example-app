@@ -7,8 +7,7 @@ docReady(function() {
   var endSoundGorilla = new Audio('../endsound.wav');
   let berni = new Image();
   berni.src = '/ape.jpg';
-  berni.onload = () => {
-    beginSound.play();
+  berni.onload = async () => {
     document.getElementById('mint-button').disabled = true;
     const sound = new headbreaker.Canvas('sound-canvas', {
       width: 444, height: 444,
@@ -25,8 +24,8 @@ docReady(function() {
       insertsGenerator: headbreaker.generators.random
     });
     sound.shuffle();
-    sound.draw();  
-
+    await sound.draw();  
+    beginSound.play();
     sound.attachSolvedValidator();
     sound.onValid(() => {
       console.log("puzzle-solved")
