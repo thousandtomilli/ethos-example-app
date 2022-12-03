@@ -9,7 +9,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color:white;
-  background-color: black;  
+  background-color:#2e5a15;  
 }
 
 a {
@@ -26,14 +26,14 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color:white;
+    background:#2e5a15;
   }
 }
 
 #sound-canvas {
   border: solid white;
-  background:gray;
+  background:beige;
   margin: 0;
   padding: 0;
   box-sizing: content-box;
@@ -60,11 +60,11 @@ a {
 }
 
 #main-container button {
-  background-color: #f3db08;
+  background-color:#f2f083;
   color:black;
 }
 #main-container button:disabled {
-  background-color: hsl(33, 80%, 24%);
+  background-color:#868402;
   color:black;
 }
 

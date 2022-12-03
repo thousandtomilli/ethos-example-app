@@ -3,10 +3,10 @@ var headbreaker=function(t){var e={};function i(r){if(e[r])return e[r].exports;v
 
 docReady(function() { 
 
-  var bonesAudio = new Audio('../clickbones.wav');
+  var bonesAudio = new Audio('../spell_swish.wav');
   var fanfareAudio = new Audio('../trumpet_fanfare.mp3');
   let berni = new Image();
-  berni.src = 'https://moveecosystem.com/wp-content/uploads/2022/11/zombie-skull.png';
+  berni.src = '/arion_guardians.jpg';
   berni.onload = () => {
     document.getElementById('mint-button').disabled = true;
     const sound = new headbreaker.Canvas('sound-canvas', {

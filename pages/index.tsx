@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   return (
     <div className="flex justify-between items-start">
 
-      <div className="p-12 flex-1">Status: {status}</div>
+      <div className="p-12 flex-1"><p></p></div>
 
       <div id="main-container" className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8 flex-6">
         {wallet ? (
@@ -37,10 +37,10 @@ const Home: NextPage = () => {
                 <div id="overlay-image">
                   <Image 
                     id="validated-canvas-overlay" 
-                    src="/zombie_skull.png"
-                    width={444}
-                    height={444}
-                    alt="skull puzzle"
+                    src="/arion_guardians.jpg"
+                    width={455}
+                    height={455}
+                    alt="Arion (Guardians NFT)"
                   /> 
                 </div>
               </div>

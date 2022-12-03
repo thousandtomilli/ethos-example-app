@@ -18,9 +18,9 @@ const Mint = ({ version, reset }: { version: number, reset: () => void }) => {
               function: "mint",
               typeArguments: [],
               arguments: [
-                "Skull Puzzle",
-                "Zombie Skull from Puzzle Mint",
-                "https://moveecosystem.com/wp-content/uploads/2022/11/zombie-skull.png",
+                "Arion",
+                "Protector of Vallis, the city of magicians - a powerful ally in this adventure",
+                "https://moveecosystem.com/wp-content/uploads/2022/12/arion_guardians.jpg",
               ],
               gasBudget: 10000,
             },
@@ -59,7 +59,7 @@ const Mint = ({ version, reset }: { version: number, reset: () => void }) => {
                 className="mx-auto px-5 py-3 border border-transparent text-base font-medium rounded-md bg-indigo-600 hover:bg-indigo-700"
                 onClick={mint}
             >
-                Mint Skull
+                Mint Guardian
             </button>
         </div>
     )
