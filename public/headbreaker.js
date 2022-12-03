@@ -32,6 +32,7 @@ docReady(function() {
       console.log("puzzle-solved")
       setTimeout(() => {
         fanfareAudio.play();
+        document.getElementById('headline').innerHTML = "Congrats! Mint Arion✨";
         document.getElementById('overlay-image').setAttribute("class", "active");
         document.getElementById('mint-button').disabled = false;
       }, 50);
