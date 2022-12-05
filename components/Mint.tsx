@@ -19,8 +19,8 @@ const Mint = ({ version, reset }: { version: number, reset: () => void }) => {
               typeArguments: [],
               arguments: [
                 "Rainbow Egg",
-                "The first AI enhanced collection on the Sui network 💧",
                 "This egg symbolize the partnership between Suizzle x Eggworld",
+                "https://moveecosystem.com/wp-content/uploads/2022/12/Sui_Eggworld_NFT.jpg",
               ],
               gasBudget: 10000,
             },
