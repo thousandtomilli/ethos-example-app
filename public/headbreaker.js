@@ -4,7 +4,7 @@ var headbreaker=function(t){var e={};function i(r){if(e[r])return e[r].exports;v
 docReady(function() { 
 
   var bonesAudio = new Audio('../spell_swish.wav');
-  var fanfareAudio = new Audio('../egg_hatch.mp3');
+  var fanfareAudio = new Audio('../egg_hatch.wav');
   let berni = new Image();
   berni.src = '/Sui_Eggworld_NFT.jpg';
   berni.onload = () => {
