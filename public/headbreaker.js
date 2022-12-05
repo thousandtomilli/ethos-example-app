@@ -4,9 +4,9 @@ var headbreaker=function(t){var e={};function i(r){if(e[r])return e[r].exports;v
 docReady(function() { 
 
   var bonesAudio = new Audio('../spell_swish.wav');
-  var fanfareAudio = new Audio('../trumpet_fanfare.mp3');
+  var fanfareAudio = new Audio('../egg_hatch.mp3');
   let berni = new Image();
-  berni.src = '/arion_guardians.jpg';
+  berni.src = '/Sui_Eggworld_NFT.jpg';
   berni.onload = () => {
     document.getElementById('mint-button').disabled = true;
     const sound = new headbreaker.Canvas('sound-canvas', {
@@ -32,7 +32,7 @@ docReady(function() {
       console.log("puzzle-solved")
       setTimeout(() => {
         fanfareAudio.play();
-        document.getElementById('headline').innerHTML = "Congrats! Mint Arion✨";
+        document.getElementById('headline').innerHTML = "Congrats! Mint Egg 🥚";
         document.getElementById('overlay-image').setAttribute("class", "active");
         document.getElementById('mint-button').disabled = false;
       }, 50);

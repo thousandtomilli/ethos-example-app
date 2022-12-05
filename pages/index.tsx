@@ -37,10 +37,10 @@ const Home: NextPage = () => {
                 <div id="overlay-image">
                   <Image 
                     id="validated-canvas-overlay" 
-                    src="/arion_guardians.jpg"
+                    src="/Sui_Eggworld_NFT.jpg"
                     width={455}
                     height={455}
-                    alt="Arion (Guardians NFT)"
+                    alt="Sui Eggworld"
                   /> 
                 </div>
               </div>

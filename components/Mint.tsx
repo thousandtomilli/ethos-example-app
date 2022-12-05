@@ -18,9 +18,9 @@ const Mint = ({ version, reset }: { version: number, reset: () => void }) => {
               function: "mint",
               typeArguments: [],
               arguments: [
-                "Arion",
-                "Protector of Vallis, the city of magicians - a powerful ally in this adventure",
-                "https://moveecosystem.com/wp-content/uploads/2022/12/arion_guardians.jpg",
+                "Egg World",
+                "The first AI enhanced collection on the Sui network 💧",
+                "https://moveecosystem.com/wp-content/uploads/2022/12/Sui_Eggworld_NFT.jpg",
               ],
               gasBudget: 10000,
             },
@@ -59,7 +59,7 @@ const Mint = ({ version, reset }: { version: number, reset: () => void }) => {
                 className="mx-auto px-5 py-3 border border-transparent text-base font-medium rounded-md bg-indigo-600 hover:bg-indigo-700"
                 onClick={mint}
             >
-                Mint Guardian
+                Mint Egg
             </button>
         </div>
     )

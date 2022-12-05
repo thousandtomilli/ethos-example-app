@@ -9,7 +9,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color:white;
-  background-color:#2e5a15;  
+  background-color:black;  
 }
 
 a {
@@ -27,7 +27,7 @@ a {
   }
   body {
     color:white;
-    background:#2e5a15;
+    background:black;
   }
 }
 
@@ -60,11 +60,11 @@ a {
 }
 
 #main-container button {
-  background-color:#f2f083;
+  background-color:#f398dc;
   color:black;
 }
 #main-container button:disabled {
-  background-color:#868402;
+  background-color:#860269;
   color:black;
 }
 
